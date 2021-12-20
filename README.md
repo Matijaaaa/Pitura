@@ -1,0 +1,2 @@
+# Pitura
+Projekt iz Pi
