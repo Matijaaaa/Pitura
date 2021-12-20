@@ -5,7 +5,7 @@ Web aplikacija za pomoć pri farbanju .
 ### Autori i zaduženja
 
 -   **Matija Fabris** (mafabris@unipu.hr) - implementacija modula za administraciju i UI komponenti
--   
+
 ### Prototip aplikacije
 
 Figma: https://www.figma.com/proto/wgzveGDfwog5YJjJOqCfNl/Pitura?node-id=0%3A1
