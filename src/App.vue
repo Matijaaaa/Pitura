@@ -4,7 +4,9 @@
     <!--Header-->
     <v-app-bar app dark class="cyan" height="70">
       <div class="flex justify-center mt-4">
-        <v-icon size="70" color="yellow">mdi-format-color-fill</v-icon>
+        <router-link to="/">
+          <v-icon size="70" color="yellow">mdi-format-color-fill</v-icon>
+        </router-link>
       </div>
       <!--
       <v-btn

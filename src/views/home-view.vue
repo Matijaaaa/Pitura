@@ -7,7 +7,13 @@
       <h1 class="text-lg font-semibold">Aplikacija za pomoć pri farbanju</h1>
     </div>
     <div class="flex justify-center mt-48">
-      <v-btn class="py-8" elevation="2" x-large rounded color="yellow">
+      <v-btn
+        class="py-8"
+        elevation="2"
+        x-large
+        rounded
+        color="yellow"
+        to="/odabir-boje">
         <v-icon>mdi-plus</v-icon>
         krenimo</v-btn
       >
