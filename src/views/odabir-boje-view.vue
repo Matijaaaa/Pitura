@@ -1,5 +1,5 @@
 <template>
   <div class="about">
-    <h1>edit</h1>
+    <h1>Odabir boje</h1>
   </div>
 </template>
