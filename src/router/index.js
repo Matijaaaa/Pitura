@@ -1,6 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/home-view.vue";
+import PovrsinaUslugeView from "../views/povrsina-usluge-view.vue"
+import OdabirBojeView from "../views/odabir-boje-view.vue"
 
 Vue.use(VueRouter);
 
@@ -13,8 +15,12 @@ const routes = [
   {
     path: "/odabir-boje",
     name: "odabir-boje",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/odabir-boje-view.vue"),
+    component: OdabirBojeView,
+  },
+  {
+    path: "/povrsina-usluge",
+    name: "povrsina-uskuge",
+    component: PovrsinaUslugeView,
   },
 ];
 
