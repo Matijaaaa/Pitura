@@ -7,10 +7,7 @@
 <script>
 export default {
   name: "povrsina-usluge",
-
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
