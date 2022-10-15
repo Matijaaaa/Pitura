@@ -24,21 +24,19 @@
       ></v-color-picker>
     </div>
     <div class="flex justify-center mt-15">
-      <v-btn
-        class=""
+      <button
+        class="bg-purple-700 hover:bg-purple-500 text-white py-2 px-4 rounded"
+        @click.prevent="saveData"
         :disabled="!bojaJeOdabrana"
-        elevation="2"
-        x-large
-        color="purple"
-        to="/povrsina-usluge"
       >
-        dalje</v-btn
-      >
+        DALJE
+      </button>
     </div>
   </v-container>
 </template>
 
 <script>
+import Store from "../store.js";
 export default {
   name: "odabir-boje",
   data() {
@@ -56,7 +54,15 @@ export default {
       ],
       odabranaVrstaBoje: "",
       odabranaBoja: null,
+      Store,
     };
+  },
+  methods: {
+    saveData() {
+      Store.odabranaVrstaBoje = this.odabranaVrstaBoje;
+      Store.odabranaBoja = this.odabranaBoja;
+      this.$router.push({ path: "/povrsina-usluge" });
+    },
   },
   computed: {
     bojaJeOdabrana() {

@@ -6,7 +6,6 @@
     <div class="mt-8 flex justify-center">
       <v-text-field
         label="Unesite površinu"
-        :rules="rules"
         hide-details="auto"
         class="inline"
         v-model="unesenaPovrsina"
@@ -56,21 +55,19 @@
       ></v-checkbox>
     </div>
     <div class="mt-8 flex justify-center">
-      <v-btn
-        :disabled="!unesenaPovrsina"
-        class=""
-        elevation="2"
-        x-large
-        color="purple"
-        to="/povrsina-usluge"
+      <button
+        class="bg-purple-700 hover:bg-purple-500 text-white py-2 px-4 rounded"
+        @click.prevent="saveData"
+        :disabled="!izracunLitara"
       >
-        dalje</v-btn
-      >
+        DALJE
+      </button>
     </div>
   </div>
 </template>
 
 <script>
+import Store from "../store.js";
 export default {
   name: "povrsina-usluge",
   data() {
@@ -80,7 +77,19 @@ export default {
       uslugeFarbanja: null,
       premiumBoja: null,
       ciscenje: null,
+      Store,
     };
+  },
+  methods: {
+    saveData() {
+      Store.unesenaPovrsina = this.unesenaPovrsina;
+      Store.skela = this.skela;
+      Store.uslugeFarbanja = this.uslugeFarbanja;
+      Store.premiumBoja = this.premiumBoja;
+      Store.ciscenje = this.ciscenje;
+      Store.litreBoje = this.izracunLitara;
+      this.$router.push({ path: "/ispis-narudzbe" });
+    },
   },
   computed: {
     izracunLitara() {

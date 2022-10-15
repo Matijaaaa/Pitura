@@ -1,8 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/home-view.vue";
-import PovrsinaUslugeView from "../views/povrsina-usluge-view.vue"
-import OdabirBojeView from "../views/odabir-boje-view.vue"
+import PovrsinaUslugeView from "../views/povrsina-usluge-view.vue";
+import OdabirBojeView from "../views/odabir-boje-view.vue";
+import IspisNarudzbeView from "..//views/ispis-narudzbe-view.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: "/povrsina-usluge",
     name: "povrsina-uskuge",
     component: PovrsinaUslugeView,
+  },
+  {
+    path: "/ispis-narudzbe",
+    name: "ispis-narudzbe",
+    component: IspisNarudzbeView,
   },
 ];
 
