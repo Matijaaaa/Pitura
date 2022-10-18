@@ -13,7 +13,7 @@
     </div>
     <div class="mt-8 flex justify-center">
       <h1 class="text-2xl font-semibold">
-        Potrebno vam je: {{ izracunLitara }} L
+        Potrebno vam je: {{ Math.round(this.izracunLitara * 100) / 100 }} L
       </h1>
     </div>
     <div class="mt-8 flex justify-center">
@@ -87,7 +87,7 @@ export default {
       Store.uslugeFarbanja = this.uslugeFarbanja;
       Store.premiumBoja = this.premiumBoja;
       Store.ciscenje = this.ciscenje;
-      Store.litreBoje = this.izracunLitara;
+      Store.litreBoje = Math.round(this.izracunLitara * 100) / 100;
       this.$router.push({ path: "/ispis-narudzbe" });
     },
   },
