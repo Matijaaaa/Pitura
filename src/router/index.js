@@ -5,6 +5,7 @@ import PovrsinaUslugeView from "../views/povrsina-usluge-view.vue";
 import OdabirBojeView from "../views/odabir-boje-view.vue";
 import IspisNarudzbeView from "..//views/ispis-narudzbe-view.vue";
 import PrijavaView from "..//views/prijava-view.vue";
+import RegistracijaView from "..//views/registracija-view.vue";
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: "/prijava",
     name: "prijava",
     component: PrijavaView,
+  },
+  {
+    path: "/registracija",
+    name: "registracija",
+    component: RegistracijaView,
   },
 ];
 

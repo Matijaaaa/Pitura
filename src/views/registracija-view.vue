@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mt-8 flex justify-center">
-      <h1 class="text-2xl font-semibold">Prijava korisnika</h1>
+      <h1 class="text-2xl font-semibold">Registracija korisnika</h1>
     </div>
     <div class="mt-8 flex justify-center">
       <v-text-field
@@ -29,11 +29,11 @@
         @click.prevent="saveData"
         :disabled="!izracunLitara"
       >
-        Prijava
+        Registracija
       </button>
     </div>
     <div class="mt-8 flex justify-center">
-      <p>Nemaš račun? <a href="/registracija">Registriraj se!</a></p>
+      <p>Imaš račun? <a href="/prijava">Prijavi se!</a></p>
     </div>
   </div>
 </template>
