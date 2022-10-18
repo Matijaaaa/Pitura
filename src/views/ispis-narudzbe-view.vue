@@ -4,7 +4,13 @@
       <h1 class="text-3xl font-semibold">Vaša narudžba</h1>
     </div>
     <div class="mt-8 flex justify-center">
-      <v-sheet color="teal" elevation="2" height="380" width="270">
+      <v-sheet
+        color="yellow darken-1"
+        elevation="2"
+        height="450"
+        width="400"
+        class="pr-8 pl-8 pt-2 pb-2 text-xl"
+      >
         <p>Odabrana boja:</p>
         <v-color-picker
           disabled
