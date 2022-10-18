@@ -3,20 +3,20 @@
   <v-app style="background-color: #b2ebf2">
     <!--Header-->
     <v-app-bar app dark class="cyan" height="70">
-      <div class="flex justify-center mt-4">
+      <div class="flex justify-center mt-4 ml-24">
         <router-link to="/">
           <v-icon size="70" color="yellow">mdi-format-color-fill</v-icon>
         </router-link>
       </div>
-      <!--
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text>
-        <span class="mr-2">Latest Release</span>
-        <v-icon color="red">mdi-format-color-fill</v-icon>
-      </v-btn>
-      -->
+      <div class="float-right">
+        <v-btn
+          href="https://github.com/vuetifyjs/vuetify/releases/latest"
+          text
+          to="/prijava"
+        >
+          <span class="mr-2">Prijava</span>
+        </v-btn>
+      </div>
     </v-app-bar>
 
     <v-main>

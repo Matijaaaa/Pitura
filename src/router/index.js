@@ -4,6 +4,7 @@ import HomeView from "../views/home-view.vue";
 import PovrsinaUslugeView from "../views/povrsina-usluge-view.vue";
 import OdabirBojeView from "../views/odabir-boje-view.vue";
 import IspisNarudzbeView from "..//views/ispis-narudzbe-view.vue";
+import PrijavaView from "..//views/prijava-view.vue";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/ispis-narudzbe",
     name: "ispis-narudzbe",
     component: IspisNarudzbeView,
+  },
+  {
+    path: "/prijava",
+    name: "prijava",
+    component: PrijavaView,
   },
 ];
 
