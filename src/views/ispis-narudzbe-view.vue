@@ -26,7 +26,7 @@
         <p>Skela: {{ Store.skela ? "DA" : "NE" }}</p>
         <p>Usluge farbanja: {{ Store.uslugeFarbanja ? "DA" : "NE" }}</p>
         <p>Premium boja: {{ Store.premiumBoja ? "DA" : "NE" }}</p>
-        <p>Ciscenje: {{ Store.ciscenje ? "DA" : "NE" }}</p>
+        <p>Čišćenje: {{ Store.ciscenje ? "DA" : "NE" }}</p>
       </v-sheet>
     </div>
     <div class="mt-8 flex justify-center">
