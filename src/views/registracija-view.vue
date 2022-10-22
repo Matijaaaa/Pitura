@@ -64,11 +64,14 @@ export default {
   }),
   methods: {
     signup() {
+      console.log("login..." + this.email);
+
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
-        .then(function () {
-          console.log("Uspješna registracija");
+        .then((result) => {
+          console.log("Uspješna registracija", result);
+          this.$router.replace({ name: "home" });
         });
       console.log("Nastavak");
     },
