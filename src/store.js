@@ -7,4 +7,5 @@ export default {
   premiumBoja: null,
   ciscenje: null,
   litreBoje: 0,
+  currentUser: null,
 };

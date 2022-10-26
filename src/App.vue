@@ -10,6 +10,7 @@
       </div>
       <div class="float-right">
         <v-btn
+          v-if="!store.currentUser"
           href="https://github.com/vuetifyjs/vuetify/releases/latest"
           text
           to="/prijava"
@@ -19,6 +20,7 @@
       </div>
       <div class="float-right">
         <v-btn
+          v-if="store.currentUser"
           href="https://github.com/vuetifyjs/vuetify/releases/latest"
           @click="logout()"
           text
@@ -37,20 +39,28 @@
 
 <script>
 import { firebase } from "./views/firebase.js";
+import store from "./store.js";
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     console.log(user.email);
+    store.currentUser = user.email;
   } else {
     console.log("No user");
+    store.currentUser = null;
   }
 });
 export default {
   name: "App",
 
-  data: () => ({
-    //
-  }),
+  data() {
+    return {
+      store,
+    };
+  },
+  //() => ({
+  //
+  //}),
   methods: {
     logout() {
       firebase
