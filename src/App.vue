@@ -40,6 +40,7 @@
 <script>
 import { firebase } from "./views/firebase.js";
 import store from "./store.js";
+import router from "./router";
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -48,6 +49,10 @@ firebase.auth().onAuthStateChanged((user) => {
   } else {
     console.log("No user");
     store.currentUser = null;
+
+    if (router.name !== "prijava") {
+      router.push({ name: "prijava" });
+    }
   }
 });
 export default {
