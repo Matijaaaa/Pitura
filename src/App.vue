@@ -26,6 +26,15 @@
 </template>
 
 <script>
+import { firebase } from "./views/firebase.js";
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log(user.emai);
+  } else {
+    console.log("No user");
+  }
+});
 export default {
   name: "App",
 
