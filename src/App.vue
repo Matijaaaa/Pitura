@@ -17,6 +17,16 @@
           <span class="mr-2">Prijava</span>
         </v-btn>
       </div>
+      <div class="float-right">
+        <v-btn
+          href="https://github.com/vuetifyjs/vuetify/releases/latest"
+          @click="logout()"
+          text
+          to="/prijava"
+        >
+          <span class="mr-2">Odjava</span>
+        </v-btn>
+      </div>
     </v-app-bar>
 
     <v-main>
@@ -30,7 +40,7 @@ import { firebase } from "./views/firebase.js";
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    console.log(user.emai);
+    console.log(user.email);
   } else {
     console.log("No user");
   }
@@ -41,6 +51,16 @@ export default {
   data: () => ({
     //
   }),
+  methods: {
+    logout() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.push({ name: "prijava" });
+        });
+    },
+  },
 };
 </script>
 <style></style>
