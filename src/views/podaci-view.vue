@@ -17,7 +17,7 @@
           required
         ></v-text-field>
 
-        <v-radio-group v-model="radioGroup">
+        <v-radio-group v-model="radioGroup" mandatory>
           <v-radio label="1. Osobno preuzimanje" value="false"></v-radio>
           <v-radio label="2. Dostava" value="true"></v-radio>
         </v-radio-group>
@@ -28,6 +28,7 @@
           hide-details="auto"
           class="inline"
           v-model="unesenaAdresa"
+          required
         ></v-text-field>
 
         <v-btn
@@ -62,7 +63,12 @@ export default {
   },
   methods: {
     validate() {
-      this.$refs.form.validate();
+      let Validation = this.$refs.form.validate();
+      console.log(Validation);
+      if (Validation) this.$router.replace({ name: "finish" });
+      store.adresa = this.unesenaAdresa;
+      store.brojtelefona = this.brojTelefona;
+      store.ime = this.name;
     },
     reset() {
       this.$refs.form.reset();
