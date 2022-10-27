@@ -49,23 +49,58 @@
         Plaćanje se vrši pri preuzimanju robe
       </h1>
     </div>
-    <div class="mt-6 mb-6 flex justify-center">
-      <v-btn class="py-8" elevation="2" x-large rounded color="yellow" to="/">
-        <v-icon>mdi-check</v-icon>
-        Završi narudžbu</v-btn
+    <div class="mt-6 mb-2 flex justify-center">
+      <button
+        class="bg-purple-700 hover:bg-purple-500 text-white py-2 px-4 rounded"
+        @click.prevent="dodajNarudzbu"
       >
+        Završi narudžbu!
+      </button>
+    </div>
+    <div class="mb-12 flex justify-center">
+      <v-alert v-if="finish" dense text type="success">
+        Narudžba uspješno zaprimljena!
+      </v-alert>
     </div>
   </div>
 </template>
 
 <script>
+import { DB } from "./firebase";
+
 import Store from "../store.js";
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 export default {
   name: "finish-view",
   data() {
     return {
       Store,
+      finish: false,
     };
+  },
+  methods: {
+    async dodajNarudzbu() {
+      DB.collection("narudžbe").add({
+        ime: Store.ime,
+        email: Store.currentUser,
+        adresa: Store.adresa,
+        brojtelefona: Store.brojtelefona,
+        narudžba: {
+          odabranaBoja: Store.odabranaBoja,
+          odabranaVrstaBoje: Store.odabranaVrstaBoje,
+          unesenaPovrsina: Store.unesenaPovrsina,
+          litreBoje: Store.litreBoje,
+          skela: Store.skela,
+          uslugeFarbanja: Store.uslugeFarbanja,
+          premiumBoja: Store.premiumBoja,
+          ciscenje: Store.ciscenje,
+        },
+      });
+      console.log("Narudzba dodana");
+      this.finish = true;
+      await delay(3000);
+      this.$router.replace({ name: "home" });
+    },
   },
 };
 </script>
