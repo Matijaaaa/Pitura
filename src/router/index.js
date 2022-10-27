@@ -7,6 +7,7 @@ import IspisNarudzbeView from "..//views/ispis-narudzbe-view.vue";
 import PrijavaView from "..//views/prijava-view.vue";
 import RegistracijaView from "..//views/registracija-view.vue";
 import store from "@/store";
+import PodaciView from "..//views/podaci-view.vue";
 
 Vue.use(VueRouter);
 
@@ -43,6 +44,11 @@ const routes = [
     path: "/registracija",
     name: "registracija",
     component: RegistracijaView,
+  },
+  {
+    path: "/podaci",
+    name: "podaci",
+    component: PodaciView,
   },
 ];
 

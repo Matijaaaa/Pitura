@@ -35,11 +35,17 @@
       </h1>
     </div>
     <div class="mt-8 flex justify-center">
-      <button
-        class="bg-purple-700 hover:bg-purple-500 text-white py-2 px-4 rounded"
+      <v-btn
+        class="py-8"
+        elevation="2"
+        x-large
+        rounded
+        color="yellow"
+        to="/podaci"
       >
-        DALJE
-      </button>
+        <v-icon>mdi-credit-card-marker</v-icon>
+        Plaćanje</v-btn
+      >
     </div>
   </div>
 </template>
