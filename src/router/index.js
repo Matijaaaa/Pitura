@@ -6,6 +6,7 @@ import OdabirBojeView from "../views/odabir-boje-view.vue";
 import IspisNarudzbeView from "..//views/ispis-narudzbe-view.vue";
 import PrijavaView from "..//views/prijava-view.vue";
 import RegistracijaView from "..//views/registracija-view.vue";
+import store from "@/store";
 
 Vue.use(VueRouter);
 
@@ -14,6 +15,9 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
+    meta: {
+      needsUser: true,
+    },
   },
   {
     path: "/odabir-boje",
@@ -46,6 +50,24 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  console.log(
+    "Stara ruta ",
+    from.name,
+    " -> ",
+    to.name,
+    "Korisnik",
+    store.currentUser
+  );
+  const noUser = store.currentUser === null;
+  console.log(noUser);
+  if (noUser && to.meta.needsUser) {
+    next("prijava");
+  } else {
+    next();
+  }
 });
 
 export default router;

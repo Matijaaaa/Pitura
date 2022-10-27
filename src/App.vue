@@ -43,14 +43,19 @@ import store from "./store.js";
 import router from "./router";
 
 firebase.auth().onAuthStateChanged((user) => {
+  const currentRoute = router.currentRoute;
   if (user) {
     console.log(user.email);
     store.currentUser = user.email;
+
+    if (!currentRoute.meta.needsUser) {
+      router.push({ name: "home" });
+    }
   } else {
     console.log("No user");
     store.currentUser = null;
 
-    if (router.name !== "prijava") {
+    if (currentRoute.meta.needsUser) {
       router.push({ name: "prijava" });
     }
   }
