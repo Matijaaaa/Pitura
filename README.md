@@ -30,7 +30,7 @@ uspješno zaprimljena te se vraća na početnu stranicu.
 ### Youtube video
 [Prezentacija aplikacije](https://youtu.be/9zMDaLaoyCc)
 
-### Organization  
+### Organizacija  
 Sveučilište Jurja Dobrile u Puli  
 Fakultet informatike u Puli  
 Programsko inženjerstvo, ak.god. 2022./2023.  
