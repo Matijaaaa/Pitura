@@ -28,6 +28,7 @@ podataka i ako je zadovoljan završava narudžbu. Dobiva poruku da je narudžba
 uspješno zaprimljena te se vraća na početnu stranicu.
 
 ### Youtube video
+[Prezentacija aplikacije](https://https://youtu.be/9zMDaLaoyCc)
 
 ### Organization  
 Sveučilište Jurja Dobrile u Puli  
